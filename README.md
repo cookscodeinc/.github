@@ -13,6 +13,18 @@ Changes to these community health files are maintained in this repository and ap
 3. **[Security](SECURITY.md)** Outlines the procedures for reporting vulnerabilities and the project’s security policy.
 4. **[Funding](FUNDING.yml)** Configures custom funding links (e.g., GitHub Sponsors, Patreon) to support project maintenance.
 
+## Automation
+
+Run the same containerized validation used by GitHub Actions:
+
+```console
+make verify
+```
+
+The verification container runs without network access and mounts the repository read-only. Dependabot checks weekly for updates to GitHub Actions and the pinned verification images.
+
+Dependabot configuration is repository-specific. Other Cook's Code, Inc. repositories must keep their own `.github/dependabot.yml` files for the package ecosystems they use.
+
 ## License
 
 Copyright (c) 2026, Cook's Code, Inc.
